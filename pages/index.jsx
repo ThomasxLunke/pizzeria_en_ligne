@@ -11,7 +11,7 @@ const Home = () => {
   const router = useRouter()
   return (
     <Box>
-      <Box width="calc(100%)" borderBottom="solid 1px" borderColor="gray.200" boxShadow='base' >
+      <Box width="calc(100%)" borderBottom="solid 1px" borderColor="gray.200" boxShadow='base'>
         <Center height="65px">
           <Box width="1050px" maxWidth="1050px" height="100%">
             <Header adress={false} />
@@ -25,7 +25,6 @@ const Home = () => {
       </Box>
 
       <AdressBox />
-
 
       <Box>
         <Stack direction='row' h='100px' p={4} mt="10px">

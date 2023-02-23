@@ -1,17 +1,22 @@
 import React from 'react'
 import { Box, Center, Flex, Divider, Text } from "@chakra-ui/react"
+import Link from 'next/link';
 import { IoLocationSharp } from "react-icons/io5";
 import { HiOutlineClock } from "react-icons/hi";
 import NextImage from 'next/image'
 
 const Header = ({ adress }) => {
+
     return (
         <Box width="100%" height="100%">
             <Center height="100%">
                 <Flex justify="space-between" width="100%">
                     <Box basis="30%">
-                        <NextImage src="/logo-pizzeria.jpg" alt="logo-pizzeria" height={40} width={143} />
+                        <Link href="/">
+                            <NextImage src="/logo-pizzeria.jpg" alt="logo-pizzeria" height={40} width={143} />
+                        </Link>
                     </Box>
+
                     {adress &&
                         <Flex align="center" basis="70%" justify="flex-end">
                             <IoLocationSharp />

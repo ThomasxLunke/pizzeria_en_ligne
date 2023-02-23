@@ -6,7 +6,6 @@ import { extendTheme } from "@chakra-ui/react"
 import { StoreProvider } from 'easy-peasy'
 import { store } from '../lib/store'
 
-
 const MyApp = ({ Component, pageProps }) => {
 
     const theme = extendTheme({
@@ -14,6 +13,9 @@ const MyApp = ({ Component, pageProps }) => {
             global: {
                 body: {
                     overflowY: 'scroll'
+                },
+                _disabled: {
+                    color: 'black'
                 }
             }
         }

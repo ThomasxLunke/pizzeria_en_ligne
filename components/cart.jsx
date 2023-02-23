@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { Box, Text, Center, Flex, Button, Divider } from "@chakra-ui/react"
+import { Box, Text, Center, Flex, Button, Divider, Link } from "@chakra-ui/react"
 import { useMenuPromos } from '../lib/hooks'
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useStoreState } from 'easy-peasy';
 import CartItems from './cartItems';
+import { useRouter } from 'next/router';
 
 const Cart = () => {
   const cart = useStoreState((state) => state.cart)
   const totalPrice = useStoreState((state) => state.totalPrice)
+  const router = useRouter()
 
   return (
     <Box width="100%" height="100%">
@@ -44,11 +46,14 @@ const Cart = () => {
               <Text flexBasis="50%" fontSize="large" fontWeight="bold" align="right">Prix total: {totalPrice} €</Text>
             </Flex>
           }
-          { cart.length !== 0 && <Divider />}
+          {cart.length !== 0 && <Divider />}
           <Text fontSize="medium" textColor="black" paddingBottom="10px" paddingTop="10px">Montant minimum en livraison est de 15.00 €</Text>
-          <Button colorScheme="whatsapp" width="90%">
+
+          <Button colorScheme="whatsapp" width="90%" onClick={() => router.push('/checkout')} isDisabled={cart.length === 0 ? true : false}>
             <Text padding="1px" fontWeight="bold">Commander</Text>
           </Button>
+
+
         </Flex>
       </Box>
 

@@ -36,13 +36,10 @@ const navMenu = [
 
 ]
 
-const Navbar = () => {
+const Navbar = ({activeRoute}) => {
 
-    const router = useRouter()
-    const [activeMenu, setActiveMenu] = useState(router.query.productType)
+    const [activeMenu, setActiveMenu] = useState("")
     
-    console.log(router.query.productType)
-    console.log("active : " + activeMenu)
     
     return (
         <Box width="100%" height="100%">
@@ -63,7 +60,7 @@ const Navbar = () => {
                                         paddingX="20px"
                                         paddingTop="10px"
                                         key={menu.name}
-                                        bg={activeMenu === menu.route ? "red.500" : "white"}
+                                        bg={activeRoute === menu.route ? "red.500" : "white"}
                                         height="100%"
                                         minWidth="110px"
                                         width="110px"

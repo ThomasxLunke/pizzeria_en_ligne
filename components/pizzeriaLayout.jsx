@@ -5,10 +5,11 @@ import CardProductsMenu from './cardProductsMenu'
 import CardNormalProducts from './cardNormalProducts'
 import Cart from './cart'
 import Header from './header'
+import { useRouter } from 'next/router'
 
 
-const PizzeriaLayout = ({ children, productsByType, productType }) => {
-
+const PizzeriaLayout = ({ children, productsByType, productType, isLoading }) => {
+    const router = useRouter()
 
     return (
         <Box height="100%">
@@ -23,7 +24,7 @@ const PizzeriaLayout = ({ children, productsByType, productType }) => {
             <Box width="calc(100% - 350px)" borderBottom="solid 1px" borderColor="gray.200" boxShadow='base'  >
                 <Center height="70px">
                     <Box width="100%" maxWidth="1050px" height="100%" >
-                        <Navbar />
+                        <Navbar activeRoute={router.query.productType}/>
                     </Box>
                 </Center>
             </Box>
@@ -33,8 +34,8 @@ const PizzeriaLayout = ({ children, productsByType, productType }) => {
                     <Box height="100%" maxWidth="1050px" width="100%" >
                         {
                             productType === "menupromo" ?
-                                (<CardProductsMenu productsByType={productsByType} />) :
-                                (<CardNormalProducts productsByType={productsByType} />)
+                                (<CardProductsMenu productsByType={productsByType} isLoading={isLoading}/>) :
+                                (<CardNormalProducts productsByType={productsByType} isLoading={isLoading} />)
                         }
                     </Box>
                 </Center>

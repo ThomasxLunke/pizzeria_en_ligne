@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@lottiefiles/react-lottie-player": "^3.5.2",
     "@next/font": "13.1.6",
     "@prisma/client": "^4.10.1",
     "easy-peasy": "^5.2.0",
