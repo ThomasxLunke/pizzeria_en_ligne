@@ -1,0 +1,11 @@
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.transitionStep {
+  filter: grayscale(1);
+}
+
+.transitionStep.accomplished {
+  filter: grayscale(0);
+}

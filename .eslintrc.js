@@ -1,18 +1,10 @@
 module.exports = {
-  extends: ['next/core-web-vitals', 'airbnb', 'airbnb/hooks', 'prettier'],
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  extends: ["eslint:recommended", "next", "next/core-web-vitals"],
+  plugins: ['react', 'prettier'],
   env: {
     browser: true,
     es2021: true,
     node: true,
-  },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 13,
-    sourceType: 'module',
   },
   rules: {
     'react/react-in-jsx-scope': 'off',

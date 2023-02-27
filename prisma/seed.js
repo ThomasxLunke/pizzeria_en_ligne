@@ -88,7 +88,36 @@ const run = async () => {
                 },
             })
         }),
+          
     )
+    // eslint-disable-next-line no-unused-vars
+    const restaurant1 = await prisma.restaurant.create({
+        data: {
+         name: `Restaurant 31000`,
+         longitude: 1.447860,
+         latitude: 43.612530,
+         zipCode: 31000
+        }
+    })
+    // eslint-disable-next-line no-unused-vars
+    const restaurant2 = await prisma.restaurant.create({
+        data: {
+         name: `Restaurant 31200`,
+         longitude: 1.433680,
+         latitude: 43.627180,
+         zipCode: 31200
+        }
+    })
+
+    // eslint-disable-next-line no-unused-vars
+    const restaurant3 = await prisma.restaurant.create({
+        data: {
+         name: `Restaurant 31400`,
+         longitude: 1.446030,
+         latitude: 43.588810,
+         zipCode: 31400
+        }
+    })
 }
 
 run()

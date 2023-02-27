@@ -31,3 +31,13 @@ model Product {
   productType ProductType
   image       String
 }
+
+model Restaurant {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAd DateTime @updatedAt
+  name      String   @unique
+  longitude Float
+  latitude  Float
+  zipCode   Int
+}

@@ -14,7 +14,7 @@ const CheckoutCart = () => {
     return (
         <Box width="100%">
             <Center>
-                <Button colorScheme="whatsapp" width="90%" marginTop="120px" onClick={() => { router.push('/order/menupromo') }}>
+                <Button colorScheme="whatsapp" width="90%" marginTop="120px" onClick={() => { router.push('/delivery') }}>
                     <Text padding="1px" fontWeight="bold">Commander</Text>
                 </Button>
             </Center>

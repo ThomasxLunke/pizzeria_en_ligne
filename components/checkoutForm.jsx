@@ -2,15 +2,13 @@ import React from 'react'
 import { Box, Text, Flex, Divider, FormControl, FormLabel, Input, Stack, Center } from '@chakra-ui/react'
 import { IoLocationSharp } from "react-icons/io5";
 import { HiOutlineClock } from "react-icons/hi";
-import CheckoutCart from './checkoutCart';
-
 
 
 const CheckoutForm = () => {
     return (
-        <Box>
+        <Box marginBottom="60px">
             <Center>
-                <Box marginTop="50px" width="90%">
+                <Box marginTop="60px" width="90%">
                     <Box border="solid 1px" borderColor="gray.200" boxShadow='base'>
                         <Flex align="center" padding="10px">
                             <Box marginRight="10px">
@@ -50,7 +48,7 @@ const CheckoutForm = () => {
                                 <FormLabel>Mobile</FormLabel>
                                 <Input placeholder='Pour vous contacter si besoin' marginBottom="15px" />
                                 <FormLabel>Adresse e-mail</FormLabel>
-                                <Input placeholder='Pour vous envoyez une confirmation' marginBottom="15px" />
+                                <Input placeholder='Pour vous envoyez une confirmation' marginBottom="30px" />
                             </FormControl>
                         </Box>
                         <Box border="solid 1px" borderColor="gray.200" boxShadow='base' marginTop="40px" width="50%">
@@ -91,7 +89,7 @@ const CheckoutForm = () => {
                                 </Flex>
                             </Stack>
                         </Box>
-                        <FormControl paddingX="50px" marginBottom="20px">
+                        <FormControl paddingX="50px">
                             <FormLabel>Titulaire de la carte</FormLabel>
                             <Input placeholder='Titulaire de la carte' marginBottom="15px" />
                             <FormLabel>Numéro de carte</FormLabel>
@@ -101,9 +99,8 @@ const CheckoutForm = () => {
                                 <Input placeholder='Mois' marginBottom="15px" width="100px" marginRight="20px" />
                                 <Input placeholder='Année' marginBottom="15px" width="100px" />
                             </Box>
-
                             <FormLabel>Cryptogramme visuel (CVC)</FormLabel>
-                            <Input placeholder='Cryptogramme visuel' marginBottom="15px" />
+                            <Input placeholder='Cryptogramme visuel' marginBottom="50px" />
                         </FormControl>
                     </Box>
                 </Box>
