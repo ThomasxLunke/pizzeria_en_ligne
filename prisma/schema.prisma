@@ -40,4 +40,6 @@ model Restaurant {
   longitude Float
   latitude  Float
   zipCode   Int
+  city      String
+  district  String
 }

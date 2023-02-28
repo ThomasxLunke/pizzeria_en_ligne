@@ -2,9 +2,17 @@ import React from 'react'
 import { Box, Text, Flex, Divider, FormControl, FormLabel, Input, Stack, Center } from '@chakra-ui/react'
 import { IoLocationSharp } from "react-icons/io5";
 import { HiOutlineClock } from "react-icons/hi";
+import { useStoreState } from 'easy-peasy';
 
 
 const CheckoutForm = () => {
+
+    const chosedRestaurant = useStoreState((state) => state.chosedRestaurant)
+    const takeAwayOrDelivery = useStoreState((state) => state.takeAwayOrDelivery)
+    const streetName = useStoreState((state) => state.streetName)
+    const streetNumber = useStoreState((state) => state.streetNumber)
+    const zipCode = useStoreState((state) => state.zipCode)
+
     return (
         <Box marginBottom="60px">
             <Center>
@@ -65,10 +73,10 @@ const CheckoutForm = () => {
                             </Box>
                             <Box paddingX="50px" marginBottom="20px">
                                 <Flex flexDir="column">
-                                    <Text>58</Text>
-                                    <Text>RANGUEIL (AVENUE DE)</Text>
-                                    <Text>TOULOUSE</Text>
-                                    <Text>31400</Text>
+                                    <Text>{streetNumber}</Text>
+                                    <Text>{streetName}</Text>
+                                    <Text>TOULOUSE (A MODIF) !!!!!</Text> 
+                                    <Text>{zipCode}</Text>
                                 </Flex>
                                 <FormControl marginTop="20px">
                                     <FormLabel>Livraison sans contact : Consigne pour le livreur</FormLabel>

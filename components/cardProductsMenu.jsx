@@ -84,7 +84,7 @@ const CardProductsMenu = ({ productsByType, isLoading }) => {
                                     </Box>
                                     <Divider />
                                     <Flex paddingY="20px" paddingX="20px" align="center" justify="space-between">
-                                        <Text color='blue.600' fontSize='l'>
+                                        <Text  fontSize='l'>
                                             {product.price} €
                                         </Text>
                                         <Button paddingX="70px" colorScheme="whatsapp" onClick={() => handleAdd(product.id, product.name, product.price)}>Ajouter</Button>

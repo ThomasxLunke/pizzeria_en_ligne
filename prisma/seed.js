@@ -96,7 +96,9 @@ const run = async () => {
          name: `Restaurant 31000`,
          longitude: 1.447860,
          latitude: 43.612530,
-         zipCode: 31000
+         zipCode: 31000,
+         city: "Toulouse",
+         district: "Jeanne D'arc"
         }
     })
     // eslint-disable-next-line no-unused-vars
@@ -105,7 +107,9 @@ const run = async () => {
          name: `Restaurant 31200`,
          longitude: 1.433680,
          latitude: 43.627180,
-         zipCode: 31200
+         zipCode: 31200,
+         city: "Toulouse",
+         district: "Minimes"
         }
     })
 
@@ -115,7 +119,9 @@ const run = async () => {
          name: `Restaurant 31400`,
          longitude: 1.446030,
          latitude: 43.588810,
-         zipCode: 31400
+         zipCode: 31400,
+         city: "Toulouse",
+         district: "St Michel"
         }
     })
 }

@@ -4,8 +4,11 @@ import Link from 'next/link';
 import { IoLocationSharp } from "react-icons/io5";
 import { HiOutlineClock } from "react-icons/hi";
 import NextImage from 'next/image'
+import { useStoreState } from 'easy-peasy';
 
 const Header = ({ adress }) => {
+
+    const zipCode = useStoreState((state) => state.zipCode)
 
     return (
         <Box width="100%" height="100%">
@@ -20,7 +23,7 @@ const Header = ({ adress }) => {
                     {adress &&
                         <Flex align="center" basis="70%" justify="flex-end">
                             <IoLocationSharp />
-                            <Text textDecoration="underline">Commande en livraison dans le 31400</Text>
+                            <Text textDecoration="underline">Commande en livraison dans le {zipCode}</Text>
                             <Center height="40%">
                                 <Divider orientation='vertical' marginX="10px" />
                             </Center>
