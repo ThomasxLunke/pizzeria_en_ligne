@@ -9,7 +9,11 @@ import { useStoreState } from 'easy-peasy';
 const Header = ({ adress }) => {
 
     const zipCode = useStoreState((state) => state.zipCode)
+    const city = useStoreState((state) => state.city)
+    const district = useStoreState((state) => state.district)
 
+    const takeAwayOrDelivery = useStoreState((state) => state.takeAwayOrDelivery)
+    
     return (
         <Box width="100%" height="100%">
             <Center height="100%">
@@ -23,7 +27,7 @@ const Header = ({ adress }) => {
                     {adress &&
                         <Flex align="center" basis="70%" justify="flex-end">
                             <IoLocationSharp />
-                            <Text textDecoration="underline">Commande en livraison dans le {zipCode}</Text>
+                            <Text textDecoration="underline">Commande {takeAwayOrDelivery==="0" ? "livraison" : "emporter"} {takeAwayOrDelivery==="0" ? "dans le " + zipCode : "de "+city + " " + district}</Text>
                             <Center height="40%">
                                 <Divider orientation='vertical' marginX="10px" />
                             </Center>

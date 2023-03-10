@@ -1,14 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Box, Button, Center, Flex, Divider, Text, Stack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import Header from '@/components/header'
-import AdressBox from '@/components/adressBox'
 import { useRouter } from 'next/router'
+import AdressBoxLayout from '@/components/adressBoxLayout'
+import { parseCookies } from '@/lib/parseCookies'
+import { useStoreActions,useStoreState } from 'easy-peasy'
 
 
 const Home = () => {
 
   const router = useRouter()
+
   return (
     <Box>
       <Box width="calc(100%)" borderBottom="solid 1px" borderColor="gray.200" boxShadow='base'>
@@ -24,7 +27,7 @@ const Home = () => {
         </Box>
       </Box>
 
-      <AdressBox />
+      <AdressBoxLayout />
 
       <Box>
         <Stack direction='row' h='100px' p={4} mt="10px">
@@ -55,12 +58,13 @@ const Home = () => {
       </Box>
 
       <Box bg="black" height="350px" color="white" fontSize="9xl">
-          Footer
+        Footer
       </Box>
 
     </Box>
 
   )
 }
+
 
 export default Home

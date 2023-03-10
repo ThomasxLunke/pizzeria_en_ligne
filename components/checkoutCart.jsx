@@ -2,19 +2,31 @@ import React from 'react'
 import { Box, Button, Text, Center, Flex, Divider } from '@chakra-ui/react'
 import { useStoreState } from 'easy-peasy';
 import { useRouter } from 'next/router';
+import Cookie from "js-cookie"
+
+
+
 
 
 const CheckoutCart = () => {
 
     const cart = useStoreState((state) => state.cart)
     const totalPrice = useStoreState((state) => state.totalPrice)
+    
+    const handleSubmit = () => {
+        router.push('/delivery') 
+        Cookie.set("deleveryPossible", true)
+
+    }
+
+    
 
     const router = useRouter()
 
     return (
         <Box width="100%">
             <Center>
-                <Button colorScheme="whatsapp" width="90%" marginTop="120px" onClick={() => { router.push('/delivery') }}>
+                <Button colorScheme="whatsapp" width="90%" marginTop="120px" onClick={() => { handleSubmit()}}>
                     <Text padding="1px" fontWeight="bold">Commander</Text>
                 </Button>
             </Center>

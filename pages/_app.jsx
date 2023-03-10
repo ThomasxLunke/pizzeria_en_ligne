@@ -6,9 +6,10 @@ import { extendTheme } from "@chakra-ui/react"
 import { StoreProvider } from 'easy-peasy'
 import { store } from '../lib/store'
 import "./../styles/style.css"
-//lolo
+
 
 const MyApp = ({ Component, pageProps }) => {
+
 
     const theme = extendTheme({
         styles: {
@@ -25,9 +26,11 @@ const MyApp = ({ Component, pageProps }) => {
 
     return (
         <ChakraProvider theme={theme}>
-            <StoreProvider store={store}>
-                <Component {...pageProps} />
-            </StoreProvider>
+            <CookiesProvider>
+                <StoreProvider store={store}>
+                    <Component {...pageProps} />
+                </StoreProvider>
+            </CookiesProvider>
         </ChakraProvider>
     )
 }
