@@ -6,7 +6,7 @@
 import { NextResponse } from 'next/server'
 
 export default async function middleware(req) {
-  if (req.nextUrl.pathname.startsWith('/order')) {
+  /*if (req.nextUrl.pathname.startsWith('/order')) {
     
     const isAdressCookie = req.cookies.get('isAdressCookie')?.value
     if (isAdressCookie === "false" || isAdressCookie === undefined) {
@@ -17,9 +17,9 @@ export default async function middleware(req) {
       NextResponse.rewrite(url)
       return NextResponse.redirect(url)
     }
-  }
+  }*/
 
-  if (req.nextUrl.pathname.startsWith('/checkout')) {
+  /*if (req.nextUrl.pathname.startsWith('/checkout')) {
     
     const numberItemCart = req.cookies.get('numberItemCart')?.value
 
@@ -31,9 +31,9 @@ export default async function middleware(req) {
       NextResponse.rewrite(url)
       return NextResponse.redirect(url)
     }
-  }
+  }*/
 
-  if (req.nextUrl.pathname.startsWith('/delivery')) {
+  /*if (req.nextUrl.pathname.startsWith('/delivery')) {
     
     const deleveryPossible = req.cookies.get('deleveryPossible')?.value
 
@@ -45,5 +45,5 @@ export default async function middleware(req) {
       NextResponse.rewrite(url)
       return NextResponse.redirect(url)
     }
-  }
+  }*/
 }

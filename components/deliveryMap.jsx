@@ -8,26 +8,26 @@ import Image from 'next/image';
 
 const DeliveryMap = () => {
 
+    const restaurantInformationStorage = window.localStorage.getItem('TH_SI_RESTAURANT_INFO')
+    const restaurantInformation = JSON.parse(restaurantInformationStorage)
 
-    const longitudeRestaurant = useStoreState((state) => state.longitudeRestaurant)
-    const latitudeRestaurant = useStoreState((state) => state.latitudeRestaurant)
-
-    const [lng, setLng] = useState(longitudeRestaurant);
-    const [lat, setLat] = useState(latitudeRestaurant);
-    const [zoom, setZoom] = useState(15);
-
-    console.log(lng)
-
+    const [longitudeRestaurant, setLongitudeRestaurant] = useState(restaurantInformation.adress.longitude) 
+    const [latitudeRestaurant , setLatitudeRestaurant] = useState(restaurantInformation.adress.latitude)
 
     return (
         <Map
-            initialViewState={{ longitude: lng, latitude: lat, zoom: zoom }}
-            style={{width:"100%", height:"100%"}}
-            mapboxAccessToken='pk.eyJ1IjoieGx1bmtlIiwiYSI6ImNsZWxhdjJyZDBqZWgzb29kYWVtbDZsbjgifQ.lkvs0wNfTjei2fI7XnaOAg'
-            mapStyle="mapbox://styles/mapbox/streets-v9" >
-            <Marker longitude={lng} latitude={lat} color='#3FB1CE' />
+            initialViewState={{
+                latitude: latitudeRestaurant,
+                longitude: longitudeRestaurant,
+                zoom: 14
+            }}
+            style={{ width: "100%", height: "100%" }}
+            mapStyle="mapbox://styles/mapbox/streets-v9"
+            mapboxAccessToken="pk.eyJ1IjoieGx1bmtlIiwiYSI6ImNsZWxhdjJyZDBqZWgzb29kYWVtbDZsbjgifQ.lkvs0wNfTjei2fI7XnaOAg"
+        >
+            <Marker longitude={longitudeRestaurant} latitude={latitudeRestaurant} anchor="bottom" />
+            
         </Map>
-
     )
 }
 

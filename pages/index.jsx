@@ -11,6 +11,8 @@ import { useStoreActions,useStoreState } from 'easy-peasy'
 const Home = () => {
 
   const router = useRouter()
+  const chosedRestaurant = useStoreState((state) => state.chosedRestaurant)
+
 
   return (
     <Box>
@@ -51,7 +53,17 @@ const Home = () => {
           </Box>
         </Flex>
         <Center marginTop="20px">
-          <Button fontSize="2xl" height="60px" colorScheme="whatsapp" maxW="1060px" width="1060px" onClick={() => router.push('/order/menupromo')}>
+          <Button 
+            fontSize="2xl" 
+            height="60px" 
+            colorScheme="whatsapp" 
+            maxW="1060px" 
+            width="1060px" 
+            onClick={() => {
+              if (chosedRestaurant !== "-1"){
+                  router.push('/order/menupromo')
+              }
+          }}>
             Voir toutes les offres et menus
           </Button>
         </Center>

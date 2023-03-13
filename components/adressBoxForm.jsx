@@ -13,15 +13,6 @@ const AdressBoxForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: { idRestaurant: "", street: "", streetNumber: "" } })
 
     const updateChosedRestaurant = useStoreActions((store) => store.changeChosedRestaurant)
-    const updateStreetName = useStoreActions((store) => store.changeStreetName)
-    const updateStreetNumber = useStoreActions((store) => store.changeStreetNumber)
-    const updateTakeAwayOrDelivery = useStoreActions((store) => store.changeTakeAwayOrDelivery)
-    const updateZipCode = useStoreActions((store) => store.changeZipCode)
-    const updateCity = useStoreActions((store) => store.changeCity)
-    const updateDistrict = useStoreActions((store) => store.changeDistrict)
-    const updateIsAdress = useStoreActions((store) => store.changeIsAdress)
-    const updateLatitudeRestaurant = useStoreActions((store) => store.changeLatitudeRestaurant)
-    const updateLongitudeRestaurant = useStoreActions((store) => store.changeLongitudeRestaurant)
 
     const [indexTab, setIndexTab] = useState("0")
     const [optionzipCode, setOptionZipCode] = useState("0")
@@ -29,34 +20,43 @@ const AdressBoxForm = () => {
     const [restaurantSearch, setRestaurantSearch] = useState("")
     const [restaurantSearchResult, setRestaurantSearchResult] = useState([])
 
-    const [isAdressCookie, setIsAdressCookie] = useCookies(['isAdressCookie'])
-    setIsAdressCookie('isAdressCookie', false)
-
-    const zipCode = useStoreState((state) => state.zipCode)
 
     const onSubmit = ((data) => {
+        const userInfos = {
+            adress: {
+                streetName: data.street,
+                streetNumber: data.streetNumber,
+                zipCode: optionzipCode,
+            },
+            chosedRestaurant: {
+                id: data.idRestaurant,
+            }
+            
+        }
+        window.localStorage.setItem('TH_SI_USER_INFO', JSON.stringify(userInfos))
+        window.localStorage.setItem('TH_SI_TAKEAWAYORDELIVERY', "delivery")
         updateChosedRestaurant(data.idRestaurant)
-        updateStreetName(data.street)
-        updateStreetNumber(data.streetNumber)
-        updateTakeAwayOrDelivery(indexTab.toString())
-        updateZipCode(optionzipCode)
-        console.log(optionzipCode)
-        updateIsAdress(true)
-        setIsAdressCookie('isAdressCookie', true)
     })
 
     const handleTakeAwayInfo = ((id,city,district,zipCode,longitude,latitude) => {
+        const restaurantInfos = {
+            adress: {
+                streetName: "Avenue des Etats Unis (a replace!!)",
+                streetNumber: "4",
+                city: city,
+                district: district,
+                zipCode: zipCode,
+                longitude: longitude,
+                latitude: latitude
+            },
+            chosedRestaurant: {
+                id: id,
+            }
+        }
+        
+        window.localStorage.setItem('TH_SI_RESTAURANT_INFO', JSON.stringify(restaurantInfos))
+        window.localStorage.setItem('TH_SI_TAKEAWAYORDELIVERY', "takeaway")
         updateChosedRestaurant(id)
-        updateStreetName("Avenue des Etats Unis (a replace!!)")
-        updateStreetNumber("4")
-        updateTakeAwayOrDelivery(indexTab.toString())
-        updateZipCode(zipCode)
-        updateCity(city)
-        updateDistrict(district)
-        updateIsAdress(true)
-        updateLatitudeRestaurant(latitude)
-        updateLongitudeRestaurant(longitude)
-        setIsAdressCookie('isAdressCookie', true)
     })
 
     const handleTabChange = ((index) => {

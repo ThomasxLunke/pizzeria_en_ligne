@@ -39,7 +39,6 @@ const CardNormalProducts = ({ productsByType, isLoading }) => {
         let calc = +totalPrice + price
         let resPrice = +calc.toFixed(2)
         updatePrice(+resPrice)
-        console.log(cart)
     }
 
     return (

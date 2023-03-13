@@ -3,8 +3,20 @@ import { Box, Center } from '@chakra-ui/react'
 import CheckoutHeader from '@/components/checkoutHeader'
 import CheckoutForm from '@/components/checkoutForm'
 import CheckoutCart from '@/components/checkoutCart'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useStoreState } from 'easy-peasy'
 
 const Checkout = () => {
+
+  const cart = useStoreState((state) => state.cart)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (cart.length === 0) {
+      router.push("/")
+    }
+  }, [])
   return (
     <Box>
       <Box width="calc(100% - 30%)" borderBottom="solid 1px" borderColor="gray.200" boxShadow='base' >
