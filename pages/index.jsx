@@ -1,11 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Box, Button, Center, Flex, Divider, Text, Stack, Image } from '@chakra-ui/react'
-import Link from 'next/link'
 import Header from '@/components/header'
 import { useRouter } from 'next/router'
 import AdressBoxLayout from '@/components/adressBoxLayout'
-import { parseCookies } from '@/lib/parseCookies'
-import { useStoreActions,useStoreState } from 'easy-peasy'
+import { useStoreState } from 'easy-peasy'
 
 
 const Home = () => {
@@ -25,7 +23,7 @@ const Home = () => {
       </Box>
       <Box>
         <Box height="450px">
-          <Image boxSize="100%" src="https://www.pizzahut.fr/order/images/backgrounds/fr/fr-FR/home-bg-md.6c23733672926da73d2f33fd12f84b80.jpg" objectFit="none" objectPosition="50% 5%" />
+          <Image boxSize="100%" alt="background image" src="https://www.pizzahut.fr/order/images/backgrounds/fr/fr-FR/home-bg-md.6c23733672926da73d2f33fd12f84b80.jpg" objectFit="none" objectPosition="50% 5%" />
         </Box>
       </Box>
 
@@ -46,10 +44,10 @@ const Home = () => {
       <Box mb="40px">
         <Flex gap="10px" justify="center">
           <Box maxH="360px" maxW="525px">
-            <Image src="https://api.pizzahut.io/v1/content/fr-fr/fr-1/images/promo/my-box.c68d34dd411ea45e523f10003908b892.1.jpg" />
+            <Image alt="image Promo 1" src="https://api.pizzahut.io/v1/content/fr-fr/fr-1/images/promo/my-box.c68d34dd411ea45e523f10003908b892.1.jpg" />
           </Box>
           <Box maxH="360px" maxW="525px">
-            <Image src="https://api.pizzahut.io/v1/content/fr-fr/fr-1/images/promo/mega-menu.f581c803badf1097a74ca6ce4714a21f.1.jpg" />
+            <Image alt="image Promo 1" src="https://api.pizzahut.io/v1/content/fr-fr/fr-1/images/promo/mega-menu.f581c803badf1097a74ca6ce4714a21f.1.jpg" />
           </Box>
         </Flex>
         <Center marginTop="20px">

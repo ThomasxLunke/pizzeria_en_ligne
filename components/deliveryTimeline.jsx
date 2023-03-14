@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useRef } from 'react'
-import { Box, Progress, Flex, Center } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import { Player } from '@lottiefiles/react-lottie-player';
@@ -20,9 +21,6 @@ const DeliveryTimeline = () => {
         return () => clearInterval(intervalID.current);
     }, [time]);
 
-    const playAnimation = () => {
-        this.player.current.play()
-    }
 
     return (
         <Box width="90%" height="100%" justify="center" marginX="auto" >

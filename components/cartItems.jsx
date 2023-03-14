@@ -1,11 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Box, Text, Flex, IconButton, NumberInputStepper, NumberInput, NumberInputField, NumberIncrementStepper, NumberDecrementStepper } from '@chakra-ui/react'
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import { CloseIcon } from '@chakra-ui/icons'
 
 const CartItems = () => {
-
-    const numberInput = useRef(null)
 
     const cart = useStoreState((state) => state.cart)
     const updateCart = useStoreActions((store) => store.changeCart)

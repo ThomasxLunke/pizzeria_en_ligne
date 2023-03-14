@@ -1,8 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import { Box, Flex, Text, Switch, Divider, List, ListItem, LinkOverlay, LinkBox, Center, Image } from "@chakra-ui/react"
+import { Box, Flex, Text, Switch,List, ListItem, LinkOverlay, LinkBox, Center } from "@chakra-ui/react"
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-
 
 const navMenu = [
     {

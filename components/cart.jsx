@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Box, Text, Center, Flex, Button, Divider } from "@chakra-ui/react"
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useStoreState } from 'easy-peasy';
 import CartItems from './cartItems';
 import { useRouter } from 'next/router';
-import { useCookies } from 'react-cookie';
 import Cookie from "js-cookie"
 
 
@@ -12,7 +11,6 @@ const Cart = () => {
   const cart = useStoreState((state) => state.cart)
   const totalPrice = useStoreState((state) => state.totalPrice)
   const router = useRouter()
-  const [numberItemCart, setNumberItemCar] = useCookies(['numberItemCart']);
 
 
   useEffect (() => {

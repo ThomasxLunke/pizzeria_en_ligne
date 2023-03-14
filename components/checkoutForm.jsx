@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Box, Text, Flex, Divider, FormControl, FormLabel, Input, Stack, Center } from '@chakra-ui/react'
 import { IoLocationSharp } from "react-icons/io5";
@@ -7,8 +8,6 @@ import { useStoreState } from 'easy-peasy';
 
 const CheckoutForm = () => {
 
-    const chosedRestaurant = useStoreState((state) => state.chosedRestaurant)
-    const takeAwayOrDelivery = useStoreState((state) => state.takeAwayOrDelivery)
     const streetName = useStoreState((state) => state.streetName)
     const streetNumber = useStoreState((state) => state.streetNumber)
     const zipCode = useStoreState((state) => state.zipCode)

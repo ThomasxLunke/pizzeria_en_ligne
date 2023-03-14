@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Center, Box, Grid, GridItem, Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button, Image, Text, } from "@chakra-ui/react"
+import { Flex, Box, Grid, GridItem, Stack, Heading, Divider, Button, Image, Text, } from "@chakra-ui/react"
 import { useStoreState, useStoreActions } from 'easy-peasy'
 import { Player } from '@lottiefiles/react-lottie-player';
 

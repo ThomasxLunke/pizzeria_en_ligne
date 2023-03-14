@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { Box, Text, Flex, Button, Center, Link } from '@chakra-ui/react'
 import { useStoreState, useStoreActions } from 'easy-peasy'
-import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';
 
 

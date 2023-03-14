@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { Box, Center } from '@chakra-ui/react'
 import AdressBoxForm from './adressBoxForm'
-import { useCookies } from 'react-cookie'
 import AdressBoxChosed from './adressBoxChosed'
 import { useStoreState,useStoreActions } from 'easy-peasy'
 

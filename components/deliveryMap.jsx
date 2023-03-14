@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Box } from '@chakra-ui/react'
+import React from 'react'
 import { useStoreState } from 'easy-peasy';
 import Map, {Marker} from 'react-map-gl';
-import Image from 'next/image';
-
 
 
 const DeliveryMap = () => {

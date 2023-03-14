@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/* eslint-disable no-unused-vars */
 import { Box, Center } from '@chakra-ui/react'
 import Navbar from './navbar'
 import CardProductsMenu from './cardProductsMenu'

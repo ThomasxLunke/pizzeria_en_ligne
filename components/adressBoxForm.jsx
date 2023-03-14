@@ -1,11 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import { Link, Select, Box, Button, Center, Text, Tabs, TabList, Tab, TabPanels, TabPanel, Input, FormControl, FormErrorMessage, Flex } from '@chakra-ui/react'
-// eslint-disable-next-line import/extensions
-import { useRestaurant, useRestaurantById } from '@/lib/hooks'
+import {  Select, Box, Button, Text, Tabs, TabList, Tab, TabPanels, TabPanel, Input, FormControl, FormErrorMessage } from '@chakra-ui/react'
+import { useRestaurant } from '@/lib/hooks'
 import { useForm } from "react-hook-form";
-import { useStoreState, useStoreActions, useStore } from 'easy-peasy'
-import { useRouter } from 'next/router';
-import { useCookies } from 'react-cookie';
+import { useStoreActions } from 'easy-peasy'
+
 
 const AdressBoxForm = () => {
 

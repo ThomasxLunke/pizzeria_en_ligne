@@ -12,14 +12,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': 'off',
     'consistent-return': 'off',
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
@@ -31,5 +24,6 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'react-hooks/exhaustive-deps': 'off'
   },
 }
