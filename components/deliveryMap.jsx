@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import { useStoreState } from 'easy-peasy';
 import Map, {Marker} from 'react-map-gl';
@@ -8,12 +8,8 @@ import Image from 'next/image';
 
 const DeliveryMap = () => {
 
-    const restaurantInformationStorage = window.localStorage.getItem('TH_SI_RESTAURANT_INFO')
-    const restaurantInformation = JSON.parse(restaurantInformationStorage)
-
-    const [longitudeRestaurant, setLongitudeRestaurant] = useState(restaurantInformation.adress.longitude) 
-    const [latitudeRestaurant , setLatitudeRestaurant] = useState(restaurantInformation.adress.latitude)
-
+    const longitudeRestaurant = useStoreState((state) => state.longitudeRestaurant)
+    const latitudeRestaurant = useStoreState((state) => state.latitudeRestaurant)
     return (
         <Map
             initialViewState={{

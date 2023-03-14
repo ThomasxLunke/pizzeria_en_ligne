@@ -22,6 +22,9 @@ const AdressBoxChosed = () => {
 
     const chosedRestaurant = useStoreState((state) => state.chosedRestaurant)
     const updateChosedRestaurant = useStoreActions((store) => store.changeChosedRestaurant)
+    const updateLatitudeRestaurant = useStoreActions((store) => store.changeLatitudeRestaurant)
+    const updateLongitudeRestaurant = useStoreActions((store) => store.changeLongitudeRestaurant)
+
 
     useEffect(() => {
         const userInformation = window.localStorage.getItem('TH_SI_USER_INFO')
@@ -50,6 +53,8 @@ const AdressBoxChosed = () => {
             setZipCode(rest.adress.zipCode)
             setTakeAwayOrDelivery(deliveryOrTakeAway)
             updateChosedRestaurant(rest.chosedRestaurant.id)
+            updateLatitudeRestaurant(rest.adress.latitude)
+            updateLongitudeRestaurant(rest.adress.longitude)
         }   
     }, [])
     

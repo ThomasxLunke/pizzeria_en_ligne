@@ -15,7 +15,7 @@ const DeliveryTimeline = () => {
             intervalID.current = setInterval(() => {
                 setTime((time) => time + 1);
 
-            }, 400);
+            }, 200);
         }
         return () => clearInterval(intervalID.current);
     }, [time]);
